@@ -3,18 +3,21 @@
   "id": "incubus_core",
   "version": "${version}",
 
-  "name": "Incubus Core",
-  "description": "Inaba of the cum.",
+  "name": "Outcubus Concern",
+  "description": "The butchering of the year",
   "authors": [
-    "Immortal Devs - Parent Organization",
-    "Azazelthedemonlord - Author and lead incubus",
+    "DaFuqs",
+    "Noaaan",
+    "Nerjal Nosk",
+    "Immortal Devs (former authors)",
+    "Azzyparas",
     "Jack Papel",
     "gudenau"
   ],
   "contact": {
-    "homepage": "https://github.com/devs-immortal/Incubus-Core",
-    "sources": "https://github.com/devs-immortal/Incubus-Core",
-    "issues": "https://github.com/devs-immortal/Incubus-Core/issues"
+    "homepage": "https://github.com/Noaaan/Incubus-Concern",
+    "sources": "https://github.com/Noaaan/Incubus-Concern",
+    "issues": "https://github.com/Noaaan/Incubus-Concern/issues"
   },
 
   "license": "MIT",
@@ -25,31 +28,20 @@
   "entrypoints": {
     "main": [
       "net.id.incubus_core.IncubusCore"
-    ],
-    "client": [
-      "net.id.incubus_core.IncubusCoreClient"
-    ],
-    "cardinal-components": [
-      "net.id.incubus_core.condition.IncubusCondition",
-      "net.id.incubus_core.misc.IncubusPlayerData"
     ]
   },
   "mixins": [
     "incubus_core.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.12",
+    "fabricloader": ">=0.14.15",
     "fabric": "*",
     "minecraft": "*"
   },
   "custom": {
-    "cardinal-components": [
-      "incubus_core:condition_manager",
-      "incubus_core:player_data"
-    ],
     "modmenu": {
       "links": {
-        "modmenu.discord": "https://discord.gg/vAa35wQ2ZP"
+        "modmenu.discord": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       },
       "badges": [
         "library"

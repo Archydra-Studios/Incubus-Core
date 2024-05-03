@@ -4,9 +4,7 @@ import net.id.incubus_core.blocklikeentities.api.BlockLikeSet;
 import net.id.incubus_core.blocklikeentities.util.PostTickEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.world.EntityList;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,7 +20,7 @@ public abstract class ClientWorldMixin {
     void postEntityTick(CallbackInfo ci) {
         entityList.forEach(entity -> {
             if (entity instanceof PostTickEntity postTickEntity) {
-                postTickEntity.postTick();
+                postTickEntity.incubus_Concern$postTick();
             }
         });
         BlockLikeSet.getAllSets().forEachRemaining(BlockLikeSet::postTick);

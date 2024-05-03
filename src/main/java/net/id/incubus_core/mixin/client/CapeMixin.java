@@ -23,7 +23,7 @@ public abstract class CapeMixin {
     )
     private void getCapeTexture(CallbackInfoReturnable<Identifier> cir){
         var cape = WorthinessChecker.getCapeType(((Entity) (Object) (this)).getUuid());
-        if(cape.render) {
+        if (cape.render) {
             cir.setReturnValue(cape.capePath);
             cir.cancel();
         }

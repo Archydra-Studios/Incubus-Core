@@ -5,7 +5,6 @@ import com.google.gson.JsonParser;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import org.apache.http.client.HttpResponseException;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;

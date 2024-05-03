@@ -6,9 +6,7 @@ import net.id.incubus_core.blocklikeentities.api.BlockLikeEntity;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.RenderLayers;
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.BlockRenderManager;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -19,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 @Environment(EnvType.CLIENT)
 public class BlockLikeEntityRenderer extends EntityRenderer<BlockLikeEntity> {
     private final Random random = Random.create();

@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
-
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -105,7 +104,6 @@ public class BlockLikeSet {
             }
             block.dropItem = false;
         }
-        this.entries.clear();
         this.remove();
     }
 

@@ -2,7 +2,6 @@ package net.id.incubus_core.recipe.matchbook;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.minecraft.util.Identifier;
-
 import java.util.Optional;
 
 public class MatchRegistry {

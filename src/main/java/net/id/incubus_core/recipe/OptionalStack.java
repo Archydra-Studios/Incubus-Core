@@ -1,6 +1,6 @@
 package net.id.incubus_core.recipe;
+
 import net.id.incubus_core.IncubusCore;
-import net.id.incubus_core.util.RegistryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -9,14 +9,9 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
-@SuppressWarnings("unused")
 public class OptionalStack {
 
     public static final TagKey<Item> EMPTY_FOLLY = TagKey.of(Registry.ITEM.getKey(), IncubusCore.locate("empty_item_folly"));

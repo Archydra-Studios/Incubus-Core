@@ -4,7 +4,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;

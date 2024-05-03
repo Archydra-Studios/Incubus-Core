@@ -1,12 +1,9 @@
-package net.id.incubus_core.util;
+package net.id.incubus_core.recipe;
 
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryEntryList;
+import net.minecraft.util.registry.*;
 import org.jetbrains.annotations.NotNull;
-
 import java.util.Optional;
 
 public class RegistryHelper {

@@ -5,19 +5,13 @@ import net.fabricmc.api.Environment;
 import net.id.incubus_core.blocklikeentities.util.PostTickEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.MovementType;
+import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.data.*;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.AutomaticItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtHelper;
+import net.minecraft.nbt.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.state.property.Properties;
@@ -28,11 +22,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.GameRules;
-import net.minecraft.world.RaycastContext;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
-
+import net.minecraft.world.*;
 import java.util.List;
 
 /**
@@ -161,7 +151,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
      * The big kahuna. You likely don't need to override this method.
      * Instead, override the methods that it calls.
      */
-    public void postTick() {
+    public void incubus_Concern$postTick() {
         if (this.blockState.isAir()) {
             this.discard();
             return;
@@ -346,6 +336,18 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
                     blockEntity.markDirty();
                 }
             }
+            for (Direction dir : Direction.stream().toList()) {
+                var newState = this.blockState.getStateForNeighborUpdate(
+                        dir,
+                        this.world.getBlockState(blockPos.offset(dir)),
+                        this.world,
+                        blockPos,
+                        blockPos.offset(dir)
+                );
+                this.world.setBlockState(blockPos, newState);
+                this.blockState = newState;
+            }
+            world.createAndScheduleBlockTick(blockPos, this.blockState.getBlock(), 1);
             // Stop entities from clipping through the block when it's set
             this.postTickMoveEntities();
             return true;
